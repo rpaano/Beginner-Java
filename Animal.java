@@ -8,7 +8,7 @@ import java.util.*;
 
 public class Animal{
 
-    public static final double FAVNUMBER = 1.345;
+    public static final double FAVNUMBER = 1.6180;
 
     private String name;
 
@@ -42,17 +42,17 @@ public class Animal{
 
         System.out.println("5 - 1 = " + diffOfNumber);
 
-        int multiOfNumber = 5 * 1;
+        int multOfNumber = 5 * 1;
 
-        System.out.println("5 * 1 = " + multiOfNumber);
+        System.out.println("5 * 1 = " + multOfNumber);
 
         int divOfNumber = 5 / 1;
 
         System.out.println("5 / 1 = " + divOfNumber);
 
-        int modOfNumber = 5 / 1;
+        int modOfNumber = 5 % 1;
 
-        System.out.println("5 / 1 = " + modOfNumber);
+        System.out.println("5 % 1 = " + modOfNumber);
 
         System.out.print("Enter the name: \n");
 
@@ -85,7 +85,7 @@ public class Animal{
         this.weight = weight;
     }
 
-    public boolean idHasOwner(){
+    public boolean isHasOwner(){
         return hasOwner;
     }
 
@@ -135,26 +135,55 @@ public class Animal{
     }
 
     public void setFavoriteChar(){
-        int randomNumber = (int) (Math.random() *126) + 1;
+        int randomNumber = (int) (Math.random() * 126) + 1;
 
         this.favoriteChar = (char) randomNumber;
 
         if (randomNumber == 32) {
 
-            System.out.println("Favarite character set to Space");
+            System.out.println("Favorite character set to Space");
 
         }else if (randomNumber == 10) {
 
-            System.out.println("Favarite character set to Newline");
+            System.out.println("Favorite character set to Newline");
 
         } else {
 
-            System.out.println("Favarite character set to " + this.favoriteChar);
+            System.out.println("Favorite character set to " + this.favoriteChar);
 
         }
 
+        if((randomNumber > 97) && (randomNumber < 122)){
+            System.out.println("Favorite character is a lowercase letter");
+        }
 
+        if(((randomNumber > 97) && (randomNumber < 122)) || ((randomNumber > 64) && (randomNumber < 91))){
+            System.out.println("Favorite character is a letter");
+        }
 
+        if(!false){  
+            System.out.println("I turned false to " + !false);
+        }
+
+        int whichIsBigger = (50 > randomNumber) ? 50 : randomNumber;
+
+        switch(randomNumber){
+            case 8:
+                System.out.println("Favorite to  character set to backspace");
+                break;
+            
+            case 10:
+
+            case 11:
+
+            case 12 :
+            System.out.println("Favorite character set to: Something else weird");
+            break;
+        default :
+            System.out.println("Favorite character set to: " + this.favoriteChar);
+            break;
+
+        }
     }
 
     public double getSpeed(){
@@ -173,11 +202,52 @@ public class Animal{
         this.height = height;
     }
     
+    protected static void countTo(int startingNumber){
+        for(int i = startingNumber; i <= 100; i++){
+            if (i == 90) continue;
+            System.out.println(i);
+        }
+    }
 
+    protected static String printNumbers(int maxNumbers){
+        int i = 1;
+
+        while (i < (maxNumbers / 2)) {
+            System.out.println(i);
+            i++;
+
+            if(i == (maxNumbers / 2)) break;
+        }
+
+        Animal.countTo(maxNumbers / 2);
+
+        return "End of printNumbers";
+    }
+
+    protected static void guessMyNumber(){
+        int number;
+
+        do{
+            System.out.println("Guess number uo to 100");
+
+            while(!userInput.hasNextInt()){
+                String numberEntered = userInput.next();
+                System.out.printf("%s is not a number", numberEntered);
+            }
+            number = userInput.nextInt();
+        }while(number != 50);
+    }
+
+    public String makeSound(){
+        return "Grrr";
+    }
+
+    public static void speakAnimal(Animal randAnimal){
+        System.out.println("Animal says " + randAnimal.makeSound());
+    }
 
     public static void main(String[] args) {
         Animal theAnimal = new Animal();
-        
     }
 
 }
