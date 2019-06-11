@@ -85,11 +85,11 @@ public class Animal{
         this.weight = weight;
     }
 
-    public bool getHasOwner(){
+    public boolean idHasOwner(){
         return hasOwner;
     }
 
-    public void setHasOwner(bool hasOwner){
+    public void setHasOwner(boolean hasOwner){
         this.hasOwner = hasOwner;
     }
 
@@ -115,8 +115,15 @@ public class Animal{
         long maxNumber = 1000000;
 
         //cast in to byte, int
-        this.uniqueID = minNumber + (long) (Math.Random() * ((maxNumber - minNumber) + 1));
+        this.uniqueID = minNumber + (long) (Math.random() * ((maxNumber - minNumber) + 1));
 
+        //reverse int numberString = Interger.parseInt(stringNumber);
+        String stringNumber = Long.toString(maxNumber);
+        
+        //reverse 
+        int numberString = Integer.parseInt(stringNumber);
+
+        System.out.println("Unique ID set to: " + this.uniqueID);
     }
 
     public char getFavoriteChar(){
@@ -125,6 +132,29 @@ public class Animal{
 
     public void setFavoriteChar(char favoriteChar){
         this.favoriteChar = favoriteChar;
+    }
+
+    public void setFavoriteChar(){
+        int randomNumber = (int) (Math.random() *126) + 1;
+
+        this.favoriteChar = (char) randomNumber;
+
+        if (randomNumber == 32) {
+
+            System.out.println("Favarite character set to Space");
+
+        }else if (randomNumber == 10) {
+
+            System.out.println("Favarite character set to Newline");
+
+        } else {
+
+            System.out.println("Favarite character set to " + this.favoriteChar);
+
+        }
+
+
+
     }
 
     public double getSpeed(){
