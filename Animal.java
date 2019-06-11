@@ -63,6 +63,10 @@ public class Animal{
             */
             this.setName(userInput.nextLine());
         }
+
+        this.setFavoriteChar();
+        this.setUniqueID();
+
     }
 
     public String getName(){
@@ -73,59 +77,69 @@ public class Animal{
         this.name = name;
     }
 
-    public String getWeight(){
+    public int getWeight(){
         return weight;
     }
 
-    public void setWeight(String weight){
+    public void setWeight(int weight){
         this.weight = weight;
     }
 
-    public String getHasOwner(){
+    public bool getHasOwner(){
         return hasOwner;
     }
 
-    public void setHasOwner(String hasOwner){
+    public void setHasOwner(bool hasOwner){
         this.hasOwner = hasOwner;
     }
 
-    public String getAge(){
+    public byte getAge(){
         return age;
     }
 
-    public void setAge(String age){
+    public void setAge(byte age){
         this.age = age;
     }
 
-    public String getUniqueID(){
+    public long getUniqueID(){
         return uniqueID;
     }
 
-    public void setUniqueID(String uniqueID){
+    public void setUniqueID(long uniqueID){
         this.uniqueID = uniqueID;
+        System.out.println("Unique ID set to: " + this.uniqueID);
     }
 
-    public String getFavoriteChar(){
+    public void setUniqueID(){
+        long minNumber = 1;
+        long maxNumber = 1000000;
+
+        //cast in to byte, int
+        this.uniqueID = minNumber + (long) (Math.Random() * ((maxNumber - minNumber) + 1));
+
+    }
+
+    public char getFavoriteChar(){
         return favoriteChar;
     }
 
-    public void setFavoriteChar(String favoriteChar){
+    public void setFavoriteChar(char favoriteChar){
         this.favoriteChar = favoriteChar;
     }
 
-    public String getSpeed(){
+    public double getSpeed(){
         return speed;
     }
 
-    public void setSpeed(String speed){
+    public void setSpeed(double speed){
         this.speed = speed;
     }
 
-    public String getHeight(){
+    public float getHeight(){
         return height;
     }
 
-    public void setHeight(String height){
+    public void setHeight(float height){
         this.height = height;
     }
     
