@@ -41,7 +41,7 @@ public class Animal{
             this.setName(userInput.nextLine()); 
         }
 
-        this.setFavoriteriteColor();
+        this.setFavoriteChar();
         this.setUniqueID();
 
     }
@@ -93,7 +93,7 @@ public class Animal{
 
         this.uniqueID = minNumber + (long) (Math.random() * ((maxNumber - minNumber) - 1));
         
-        String stringnumber = Long.toString(maxNumber);
+        String stringNumber = Long.toString(maxNumber);
 
         int numberString = Integer.parseInt(stringNumber);
 
@@ -164,8 +164,65 @@ public class Animal{
         this.height = height;
     }
 
+    protected static void countTo(int startingNumber){
+        for(int i = startingNumber; i <= 100; i++){
+            if (i == 90) continue;
+
+            System.out.println(i);
+        }
+    }
+
+    protected static String printNumbers(int maxNumbers){
+        int i = 1;
+
+        while(i < (maxNumbers / 2)){
+            System.out.println(i);
+            i++;
+
+            if(i == (maxNumbers / 2)) break;
+        }
+
+        Animal.countTo(maxNumbers / 2);
+
+        return "End of printNumbers";
+    }
+
+    protected static void guessNumber(){
+        int number;
+
+        do{
+            System.out.println("Guess number up to 100");
+
+            while (!userInput.hasNextInt()){
+                String numberEntered = userInput.next();
+                System.out.printf("%s is not  a number\n", numberEntered);
+            }
+            number = userInput.nextInt();
+
+        }while (number != 50);
+
+
+    }
+
+    public String makeSound(){
+        return "Grrr";
+    }
+
+    public static void speakAnimal(Animal randAnimal){
+        System.out.println("Animal says " + randAnimal.makeSound());
+    }
+
     public static void main(String[] args) {
         Animal theAnimal = new Animal();
         
+        int[] favoritenumber;
+
+        favoriteNumber = new int[20];
+
+        favoriteNumber[0] = 100;
+
+        String strigArray = {"Array", "Words", "Here"};
+
+        for(String)
     }
 }
